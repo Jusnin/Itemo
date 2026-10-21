@@ -1,0 +1,287 @@
+{
+  "products": [
+    {
+      "id": "p_seed01",
+      "name": "Hand Wash",
+      "brand": "Dettol",
+      "category": "Personal Care",
+      "heroPhotoId": "ph_seed01",
+      "createdAt": "2026-08-14T15:28:02.076Z"
+    },
+    {
+      "id": "p_seed02",
+      "name": "Shampoo",
+      "brand": "Head & Shoulders",
+      "category": "Personal Care",
+      "heroPhotoId": "ph_seed02",
+      "createdAt": "2026-09-20T15:28:02.077Z"
+    },
+    {
+      "id": "p_seed03",
+      "name": "Toothpaste",
+      "brand": "Colgate",
+      "category": "Personal Care",
+      "heroPhotoId": "ph_seed03",
+      "createdAt": "2026-10-09T15:28:02.077Z"
+    },
+    {
+      "id": "p_seed04",
+      "name": "Body Lotion",
+      "brand": "Nivea",
+      "category": "Personal Care",
+      "heroPhotoId": "ph_seed04",
+      "createdAt": "2026-07-17T15:28:02.078Z"
+    },
+    {
+      "id": "p_seed05",
+      "name": "Dish Soap",
+      "brand": "Sunlight",
+      "category": "Cleaning",
+      "heroPhotoId": "ph_seed05",
+      "createdAt": "2026-09-28T15:28:02.078Z"
+    },
+    {
+      "id": "p_seed06",
+      "name": "Laundry Detergent",
+      "brand": "Breeze",
+      "category": "Cleaning",
+      "heroPhotoId": "ph_seed06",
+      "createdAt": "2026-09-04T15:28:02.079Z"
+    },
+    {
+      "id": "p_seed07",
+      "name": "Surface Spray",
+      "brand": "Mr Muscle",
+      "category": "Cleaning",
+      "heroPhotoId": "ph_seed07",
+      "createdAt": "2026-10-15T15:28:02.079Z"
+    },
+    {
+      "id": "p_seed08",
+      "name": "Bin Bags",
+      "brand": "Glad",
+      "category": "Cleaning",
+      "heroPhotoId": "ph_seed08",
+      "createdAt": "2026-10-06T15:28:02.080Z"
+    },
+    {
+      "id": "p_seed09",
+      "name": "Olive Oil",
+      "brand": "Bertolli",
+      "category": "Food & Drink",
+      "heroPhotoId": "ph_seed09",
+      "createdAt": "2026-09-11T15:28:02.080Z"
+    },
+    {
+      "id": "p_seed10",
+      "name": "Instant Coffee",
+      "brand": "Nescafé",
+      "category": "Food & Drink",
+      "heroPhotoId": "ph_seed10",
+      "createdAt": "2026-10-10T15:28:02.080Z"
+    },
+    {
+      "id": "p_seed11",
+      "name": "Rice 5kg",
+      "brand": "Jasmine",
+      "category": "Food & Drink",
+      "heroPhotoId": "ph_seed11",
+      "createdAt": "2026-08-28T15:28:02.081Z"
+    },
+    {
+      "id": "p_seed12",
+      "name": "Milk 1L",
+      "brand": "Farmhouse",
+      "category": "Food & Drink",
+      "heroPhotoId": "ph_seed12",
+      "createdAt": "2026-10-18T15:28:02.081Z"
+    },
+    {
+      "id": "p_seed13",
+      "name": "Paracetamol",
+      "brand": "Panadol",
+      "category": "Medicine",
+      "heroPhotoId": "ph_seed13",
+      "createdAt": "2026-06-23T15:28:02.081Z"
+    },
+    {
+      "id": "p_seed14",
+      "name": "Plasters",
+      "brand": "Hansaplast",
+      "category": "Medicine",
+      "heroPhotoId": "ph_seed14",
+      "createdAt": "2026-04-04T15:28:02.082Z"
+    },
+    {
+      "id": "p_seed15",
+      "name": "AA Batteries",
+      "brand": "Energizer",
+      "category": "Electronics",
+      "heroPhotoId": "ph_seed15",
+      "createdAt": "2026-08-02T15:28:02.082Z"
+    },
+    {
+      "id": "p_seed16",
+      "name": "USB-C Cable",
+      "brand": "Anker",
+      "category": "Electronics",
+      "heroPhotoId": "ph_seed16",
+      "createdAt": "2026-05-24T15:28:02.083Z"
+    }
+  ],
+  "batches": [
+    {
+      "id": "b_seed01_1",
+      "productId": "p_seed01",
+      "quantity": 2,
+      "purchaseDate": "2026-08-14",
+      "expiryDate": "2027-12-15",
+      "photoId": "ph_seed01",
+      "createdAt": "2026-08-14T15:28:02.077Z"
+    },
+    {
+      "id": "b_seed01_2",
+      "productId": "p_seed01",
+      "quantity": 1,
+      "purchaseDate": "2026-10-12",
+      "expiryDate": "2028-06-22",
+      "photoId": "ph_seed01",
+      "createdAt": "2026-10-12T15:28:02.077Z"
+    },
+    {
+      "id": "b_seed02_1",
+      "productId": "p_seed02",
+      "quantity": 1,
+      "purchaseDate": "2026-09-20",
+      "expiryDate": "2028-04-13",
+      "photoId": "ph_seed02",
+      "createdAt": "2026-09-20T15:28:02.077Z"
+    },
+    {
+      "id": "b_seed03_1",
+      "productId": "p_seed03",
+      "quantity": 3,
+      "purchaseDate": "2026-10-09",
+      "expiryDate": "2028-10-20",
+      "photoId": "ph_seed03",
+      "createdAt": "2026-10-09T15:28:02.077Z"
+    },
+    {
+      "id": "b_seed04_1",
+      "productId": "p_seed04",
+      "quantity": 1,
+      "purchaseDate": "2026-07-17",
+      "expiryDate": "2027-08-17",
+      "photoId": "ph_seed04",
+      "createdAt": "2026-07-17T15:28:02.078Z"
+    },
+    {
+      "id": "b_seed05_1",
+      "productId": "p_seed05",
+      "quantity": 2,
+      "purchaseDate": "2026-09-28",
+      "expiryDate": null,
+      "photoId": "ph_seed05",
+      "createdAt": "2026-09-28T15:28:02.078Z"
+    },
+    {
+      "id": "b_seed06_1",
+      "productId": "p_seed06",
+      "quantity": 1,
+      "purchaseDate": "2026-09-04",
+      "expiryDate": null,
+      "photoId": "ph_seed06",
+      "createdAt": "2026-09-04T15:28:02.079Z"
+    },
+    {
+      "id": "b_seed07_1",
+      "productId": "p_seed07",
+      "quantity": 2,
+      "purchaseDate": "2026-10-15",
+      "expiryDate": null,
+      "photoId": "ph_seed07",
+      "createdAt": "2026-10-15T15:28:02.079Z"
+    },
+    {
+      "id": "b_seed08_1",
+      "productId": "p_seed08",
+      "quantity": 4,
+      "purchaseDate": "2026-10-06",
+      "expiryDate": null,
+      "photoId": "ph_seed08",
+      "createdAt": "2026-10-06T15:28:02.080Z"
+    },
+    {
+      "id": "b_seed09_1",
+      "productId": "p_seed09",
+      "quantity": 1,
+      "purchaseDate": "2026-09-11",
+      "expiryDate": "2027-11-15",
+      "photoId": "ph_seed09",
+      "createdAt": "2026-09-11T15:28:02.080Z"
+    },
+    {
+      "id": "b_seed10_1",
+      "productId": "p_seed10",
+      "quantity": 2,
+      "purchaseDate": "2026-10-10",
+      "expiryDate": "2028-02-13",
+      "photoId": "ph_seed10",
+      "createdAt": "2026-10-10T15:28:02.080Z"
+    },
+    {
+      "id": "b_seed11_1",
+      "productId": "p_seed11",
+      "quantity": 1,
+      "purchaseDate": "2026-08-28",
+      "expiryDate": "2027-05-19",
+      "photoId": "ph_seed11",
+      "createdAt": "2026-08-28T15:28:02.081Z"
+    },
+    {
+      "id": "b_seed12_1",
+      "productId": "p_seed12",
+      "quantity": 2,
+      "purchaseDate": "2026-10-18",
+      "expiryDate": "2026-10-25",
+      "photoId": "ph_seed12",
+      "createdAt": "2026-10-18T15:28:02.081Z"
+    },
+    {
+      "id": "b_seed13_1",
+      "productId": "p_seed13",
+      "quantity": 1,
+      "purchaseDate": "2026-06-23",
+      "expiryDate": "2026-10-09",
+      "photoId": "ph_seed13",
+      "createdAt": "2026-06-23T15:28:02.081Z"
+    },
+    {
+      "id": "b_seed14_1",
+      "productId": "p_seed14",
+      "quantity": 1,
+      "purchaseDate": "2026-04-04",
+      "expiryDate": "2029-04-08",
+      "photoId": "ph_seed14",
+      "createdAt": "2026-04-04T15:28:02.082Z"
+    },
+    {
+      "id": "b_seed15_1",
+      "productId": "p_seed15",
+      "quantity": 6,
+      "purchaseDate": "2026-08-02",
+      "expiryDate": null,
+      "photoId": "ph_seed15",
+      "createdAt": "2026-08-02T15:28:02.082Z"
+    },
+    {
+      "id": "b_seed16_1",
+      "productId": "p_seed16",
+      "quantity": 2,
+      "purchaseDate": "2026-05-24",
+      "expiryDate": null,
+      "photoId": "ph_seed16",
+      "createdAt": "2026-05-24T15:28:02.083Z"
+    }
+  ]
+}
