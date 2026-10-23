@@ -10,6 +10,9 @@ import type { Batch, Db, Product } from "./types";
 const DB_NAME = "itemo";
 const DB_VERSION = 1;
 
+/** Bump when the bundled demo set changes, so returning visitors pick it up. */
+const SEED_VERSION = 2;
+
 type StoreName = "products" | "batches" | "photos" | "meta";
 
 function open(): Promise<IDBDatabase> {
@@ -50,6 +53,8 @@ const asPromise = <T,>(req: IDBRequest<T>): Promise<T> =>
 /** GitHub Pages serves the app from a subpath, so asset URLs need the prefix. */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+const urlCache = new Map<string, string>();
+
 // --- Seeding -------------------------------------------------------------
 
 async function loadSeed(): Promise<{ db: Db; photos: Map<string, Blob> }> {
@@ -78,27 +83,49 @@ export async function seed(): Promise<void> {
     for (const b of db.batches) t.objectStore("batches").put(b);
     for (const [pid, blob] of photos) t.objectStore("photos").put({ id: pid, blob });
     t.objectStore("meta").put({ key: "seeded", value: true });
+    t.objectStore("meta").put({ key: "seedVersion", value: SEED_VERSION });
   });
+  for (const url of urlCache.values()) URL.revokeObjectURL(url);
+  urlCache.clear();
 }
 
-async function seedIfEmpty(): Promise<void> {
-  const seeded = await tx(["meta"], "readonly", (t) =>
-    asPromise(t.objectStore("meta").get("seeded")),
-  );
-  if (!seeded) await seed();
+/**
+ * Refreshes the shipped demo rows in place without clearing the store, so a
+ * returning visitor gets the new artwork while anything they added survives.
+ * Seed ids are stable (p_seed01…), so putting them again simply overwrites.
+ */
+async function refreshSeed(): Promise<void> {
+  const { db, photos } = await loadSeed();
+  await tx(["products", "batches", "photos", "meta"], "readwrite", (t) => {
+    for (const p of db.products) t.objectStore("products").put(p);
+    for (const b of db.batches) t.objectStore("batches").put(b);
+    for (const [pid, blob] of photos) t.objectStore("photos").put({ id: pid, blob });
+    t.objectStore("meta").put({ key: "seedVersion", value: SEED_VERSION });
+  });
+  // Cached object URLs point at the old blobs.
+  for (const url of urlCache.values()) URL.revokeObjectURL(url);
+  urlCache.clear();
+}
+
+async function ensureSeed(): Promise<void> {
+  const [seeded, version] = await tx(["meta"], "readonly", async (t) => [
+    await asPromise(t.objectStore("meta").get("seeded")),
+    await asPromise(t.objectStore("meta").get("seedVersion")),
+  ]);
+
+  if (!seeded) return seed();
+  if ((version as { value?: number } | undefined)?.value !== SEED_VERSION) return refreshSeed();
 }
 
 // --- Reads ---------------------------------------------------------------
 
 export async function readDb(): Promise<Db> {
-  await seedIfEmpty();
+  await ensureSeed();
   return tx(["products", "batches"], "readonly", async (t) => ({
     products: await asPromise(t.objectStore("products").getAll() as IDBRequest<Product[]>),
     batches: await asPromise(t.objectStore("batches").getAll() as IDBRequest<Batch[]>),
   }));
 }
-
-const urlCache = new Map<string, string>();
 
 /** Object URLs are cached for the page's lifetime — revoking per render flickers. */
 export async function photoUrl(photoId: string | null): Promise<string | null> {

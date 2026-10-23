@@ -5,7 +5,10 @@
     </linearGradient>
   </defs>
   <rect width="800" height="800" fill="url(#g)"/>
-  <rect x="272" y="236" width="256" height="380" rx="40" fill="#fff" opacity="0.78"/>
-  <rect x="352" y="160" width="96" height="88" rx="20" fill="#fff" opacity="0.78"/>
-  <rect x="306" y="372" width="188" height="150" rx="16" fill="#53499A" opacity="0.09"/>
+  <ellipse cx="400" cy="650" rx="148" ry="20" fill="#53499A" opacity="0.08"/>
+  
+    <rect x="334" y="300" width="132" height="326" rx="26" fill="rgba(255,255,255,0.92)"/>
+    <path d="M366 302v-38h68v38z" fill="#53499A55"/>
+    <rect x="378" y="228" width="44" height="36" rx="10" fill="#53499A55"/>
+    <rect x="354" y="398" width="92" height="150" rx="12" fill="#53499A26"/>
 </svg>
