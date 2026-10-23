@@ -1,0 +1,320 @@
+{
+  "products": [
+    {
+      "id": "p_seed01",
+      "name": "Hand Wash",
+      "brand": "Dettol",
+      "category": "Personal Care",
+      "location": "Wet Kitchen",
+      "heroPhotoId": "ph_seed01",
+      "createdAt": "2026-08-16T14:23:10.568Z"
+    },
+    {
+      "id": "p_seed02",
+      "name": "Shampoo",
+      "brand": "Head & Shoulders",
+      "category": "Personal Care",
+      "location": "Master Bedroom",
+      "heroPhotoId": "ph_seed02",
+      "createdAt": "2026-09-22T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed03",
+      "name": "Toothpaste",
+      "brand": "Colgate",
+      "category": "Personal Care",
+      "location": "Master Bedroom",
+      "heroPhotoId": "ph_seed03",
+      "createdAt": "2026-10-11T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed04",
+      "name": "Body Lotion",
+      "brand": "Nivea",
+      "category": "Personal Care",
+      "location": "Master Bedroom",
+      "heroPhotoId": "ph_seed04",
+      "createdAt": "2026-07-19T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed05",
+      "name": "Dish Soap",
+      "brand": "Sunlight",
+      "category": "Cleaning",
+      "location": "Wet Kitchen",
+      "heroPhotoId": "ph_seed05",
+      "createdAt": "2026-09-30T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed06",
+      "name": "Laundry Detergent",
+      "brand": "Breeze",
+      "category": "Cleaning",
+      "location": "Store Room 1",
+      "heroPhotoId": "ph_seed06",
+      "createdAt": "2026-09-06T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed07",
+      "name": "Surface Spray",
+      "brand": "Mr Muscle",
+      "category": "Cleaning",
+      "location": "Store Room 1",
+      "heroPhotoId": "ph_seed07",
+      "createdAt": "2026-10-17T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed08",
+      "name": "Bin Bags",
+      "brand": "Glad",
+      "category": "Cleaning",
+      "location": "Dry Kitchen",
+      "heroPhotoId": "ph_seed08",
+      "createdAt": "2026-10-08T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed09",
+      "name": "Olive Oil",
+      "brand": "Bertolli",
+      "category": "Food & Drink",
+      "location": "Dry Kitchen",
+      "heroPhotoId": "ph_seed09",
+      "createdAt": "2026-09-13T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed10",
+      "name": "Instant Coffee",
+      "brand": "Nescafé",
+      "category": "Food & Drink",
+      "location": "Dry Kitchen",
+      "heroPhotoId": "ph_seed10",
+      "createdAt": "2026-10-12T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed11",
+      "name": "Rice 5kg",
+      "brand": "Jasmine",
+      "category": "Food & Drink",
+      "location": "Dry Kitchen",
+      "heroPhotoId": "ph_seed11",
+      "createdAt": "2026-08-30T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed12",
+      "name": "Milk 1L",
+      "brand": "Farmhouse",
+      "category": "Food & Drink",
+      "location": "Wet Kitchen",
+      "heroPhotoId": "ph_seed12",
+      "createdAt": "2026-10-20T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed13",
+      "name": "Paracetamol",
+      "brand": "Panadol",
+      "category": "Medicine",
+      "location": "Study Room",
+      "heroPhotoId": "ph_seed13",
+      "createdAt": "2026-06-25T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed14",
+      "name": "Plasters",
+      "brand": "Hansaplast",
+      "category": "Medicine",
+      "location": "Study Room",
+      "heroPhotoId": "ph_seed14",
+      "createdAt": "2026-04-06T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed15",
+      "name": "AA Batteries",
+      "brand": "Energizer",
+      "category": "Electronics",
+      "location": "Store Room 2",
+      "heroPhotoId": "ph_seed15",
+      "createdAt": "2026-08-04T14:23:10.569Z"
+    },
+    {
+      "id": "p_seed16",
+      "name": "USB-C Cable",
+      "brand": "Anker",
+      "category": "Electronics",
+      "location": "Living Room",
+      "heroPhotoId": "ph_seed16",
+      "createdAt": "2026-05-26T14:23:10.569Z"
+    }
+  ],
+  "batches": [
+    {
+      "id": "b_seed01_1",
+      "productId": "p_seed01",
+      "quantity": 2,
+      "purchaseDate": "2026-08-16",
+      "expiryDate": "2027-12-17",
+      "price": 12.9,
+      "photoId": "ph_seed01",
+      "createdAt": "2026-08-16T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed01_2",
+      "productId": "p_seed01",
+      "quantity": 1,
+      "purchaseDate": "2026-10-14",
+      "expiryDate": "2028-06-24",
+      "price": 12.38,
+      "photoId": "ph_seed01",
+      "createdAt": "2026-10-14T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed02_1",
+      "productId": "p_seed02",
+      "quantity": 1,
+      "purchaseDate": "2026-09-22",
+      "expiryDate": "2028-04-15",
+      "price": 24.5,
+      "photoId": "ph_seed02",
+      "createdAt": "2026-09-22T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed03_1",
+      "productId": "p_seed03",
+      "quantity": 3,
+      "purchaseDate": "2026-10-11",
+      "expiryDate": "2028-10-22",
+      "price": 8.9,
+      "photoId": "ph_seed03",
+      "createdAt": "2026-10-11T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed04_1",
+      "productId": "p_seed04",
+      "quantity": 1,
+      "purchaseDate": "2026-07-19",
+      "expiryDate": "2027-08-19",
+      "price": 19.9,
+      "photoId": "ph_seed04",
+      "createdAt": "2026-07-19T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed05_1",
+      "productId": "p_seed05",
+      "quantity": 2,
+      "purchaseDate": "2026-09-30",
+      "expiryDate": null,
+      "price": 7.5,
+      "photoId": "ph_seed05",
+      "createdAt": "2026-09-30T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed06_1",
+      "productId": "p_seed06",
+      "quantity": 1,
+      "purchaseDate": "2026-09-06",
+      "expiryDate": null,
+      "price": 32.9,
+      "photoId": "ph_seed06",
+      "createdAt": "2026-09-06T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed07_1",
+      "productId": "p_seed07",
+      "quantity": 2,
+      "purchaseDate": "2026-10-17",
+      "expiryDate": null,
+      "price": 14.9,
+      "photoId": "ph_seed07",
+      "createdAt": "2026-10-17T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed08_1",
+      "productId": "p_seed08",
+      "quantity": 4,
+      "purchaseDate": "2026-10-08",
+      "expiryDate": null,
+      "price": 11.9,
+      "photoId": "ph_seed08",
+      "createdAt": "2026-10-08T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed09_1",
+      "productId": "p_seed09",
+      "quantity": 1,
+      "purchaseDate": "2026-09-13",
+      "expiryDate": "2027-11-17",
+      "price": 28.9,
+      "photoId": "ph_seed09",
+      "createdAt": "2026-09-13T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed10_1",
+      "productId": "p_seed10",
+      "quantity": 2,
+      "purchaseDate": "2026-10-12",
+      "expiryDate": "2028-02-15",
+      "price": 21.9,
+      "photoId": "ph_seed10",
+      "createdAt": "2026-10-12T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed11_1",
+      "productId": "p_seed11",
+      "quantity": 1,
+      "purchaseDate": "2026-08-30",
+      "expiryDate": "2027-05-21",
+      "price": 34.9,
+      "photoId": "ph_seed11",
+      "createdAt": "2026-08-30T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed12_1",
+      "productId": "p_seed12",
+      "quantity": 2,
+      "purchaseDate": "2026-10-20",
+      "expiryDate": "2026-10-27",
+      "price": 7.2,
+      "photoId": "ph_seed12",
+      "createdAt": "2026-10-20T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed13_1",
+      "productId": "p_seed13",
+      "quantity": 1,
+      "purchaseDate": "2026-06-25",
+      "expiryDate": "2026-10-11",
+      "price": 9.5,
+      "photoId": "ph_seed13",
+      "createdAt": "2026-06-25T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed14_1",
+      "productId": "p_seed14",
+      "quantity": 1,
+      "purchaseDate": "2026-04-06",
+      "expiryDate": "2029-04-10",
+      "price": 12,
+      "photoId": "ph_seed14",
+      "createdAt": "2026-04-06T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed15_1",
+      "productId": "p_seed15",
+      "quantity": 6,
+      "purchaseDate": "2026-08-04",
+      "expiryDate": null,
+      "price": 18.9,
+      "photoId": "ph_seed15",
+      "createdAt": "2026-08-04T14:23:10.569Z"
+    },
+    {
+      "id": "b_seed16_1",
+      "productId": "p_seed16",
+      "quantity": 2,
+      "purchaseDate": "2026-05-26",
+      "expiryDate": null,
+      "price": 39.9,
+      "photoId": "ph_seed16",
+      "createdAt": "2026-05-26T14:23:10.569Z"
+    }
+  ]
+}
