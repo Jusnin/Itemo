@@ -24,7 +24,7 @@ export default async function StockPage() {
 
   return (
     <>
-      <Header title="My Stock" />
+      <Header title="My Stock" back="/home" />
       <main className="px-5 pb-16 pt-4">
         {grouped.length === 0 ? (
           <EmptyState

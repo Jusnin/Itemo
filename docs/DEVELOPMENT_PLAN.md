@@ -1,4 +1,4 @@
-# ITEMO — Spec Review & Development Plan
+# ITEMO! — Spec Review & Development Plan
 
 *Target: a working demo to show alongside the business plan, handed to someone else who runs it on their own laptop and opens it on their phone. Optimised for speed of build, quality of presentation, and zero setup for the recipient — not for production scale.*
 
@@ -121,15 +121,24 @@ Photos live at `data/photos/<photoId>.jpg` and are served through `/api/photo/[i
 
 ## 4. Screens
 
-Five screens. Mobile-first, one column, large touch targets.
+Six screens. Mobile-first, one column, large touch targets.
 
-1. **Home** — the three buttons (Add Item / Find Item / My Stock) as large cards, plus a horizontal strip of recently added items with their photos. Stock counts on each card.
+0. **Welcome** (`/`) — the startup screen from `docs/ItemO!-2.pdf`: the logo on the
+   torn-paper folder, "WELCOME", the tagline, and Login / Sign Up. Both buttons go
+   straight to Home; there is no account system and none is planned for the demo.
+1. **Home** (`/home`) — the three buttons (Add Item / Find Item / My Stock) as large cards, plus a horizontal strip of recently added items with their photos. Stock counts on each card.
 2. **Add Item** — camera or upload → downscale → "Reading the label…" → confirm form pre-filled with name, category, purchase date (today) and expiry if detected. Every field editable. Save.
 3. **Find Item** — search field, category chips, results as a photo grid. The user's own photos are the search results; that is the product's signature moment.
 4. **My Stock** — list grouped by category: thumbnail, name, quantity with −/+ steppers, expiry badge (red when expired, amber within 7 days).
 5. **Item Detail** — large photo, the batch list (each with its own purchase and expiry date), adjust quantity, edit, delete.
 
-**Design direction:** white/near-black base, one accent colour, generous whitespace, 16px rounded cards, photos doing the visual work. Three things carry a demo: real-looking seeded data, consistent spacing, and transitions that aren't janky.
+**Brand** (from `docs/ITEMO!.pdf` §2): purple `#9A7CC5` and yellow `#FDC904`, with
+the ITEMÖ! wordmark and sock artwork extracted from the source PDFs into
+`public/brand/`. Purple only reaches ~3.4:1 against white, so it carries fills,
+chips and icon tiles while primary buttons stay near-black — which also matches
+the Login button in the welcome mockup. Yellow marks items expiring soon.
+
+**Design direction:** white/near-black base, purple and yellow accents, generous whitespace, 16px rounded cards, photos doing the visual work. Three things carry a demo: real-looking seeded data, consistent spacing, and transitions that aren't janky.
 
 ---
 

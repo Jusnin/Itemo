@@ -1,4 +1,4 @@
-# ITEMO — Build Checklist
+# ITEMO! — Build Checklist
 
 Status: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` cut from demo scope
 
@@ -57,8 +57,8 @@ Status: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` cut from demo sco
 
 ## Day 5 — Polish & handover test
 
-- [ ] **T5.1** Design pass: spacing, type, transitions, expiry badge colours
-- [ ] **T5.2** App icon + `manifest.json` + Add-to-Home-Screen metadata
+- [x] **T5.1** Design pass: spacing, type, transitions, expiry badge colours
+- [x] **T5.2** App icon + `manifest.webmanifest` + Add-to-Home-Screen metadata
 - [ ] **T5.3** Replace placeholder seed photos with real product photographs
 - [x] **T5.4** `START-HERE.md` for the recipient
 - [x] **T5.5** `npm run share` — Cloudflare Tunnel escape hatch
@@ -66,6 +66,19 @@ Status: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` cut from demo sco
 - [ ] **T5.7** Rehearse; time the three success measures
 
 **Done when:** someone who has never seen the repo can run it in under five minutes.
+
+## Day 6 — ITEMO! rebrand & welcome screen
+
+From `docs/ITEMO!.pdf` and `docs/ItemO!-2.pdf`. The three core features and key
+requirements are unchanged from the original spec; this is identity work.
+
+- [x] **T6.1** Extract wordmark, sock and folder artwork from the PDFs into `public/brand/`
+- [x] **T6.2** Brand tokens: purple `#9A7CC5`, yellow `#FDC904`, near-black primary actions
+- [x] **T6.3** Welcome screen at `/`, Home moved to `/home`
+- [x] **T6.4** Rename to ITEMO! + tagline "Know what you own, buy only what you need"
+- [x] **T6.5** App icon and manifest from the sock mark
+- [x] **T6.6** Re-tint placeholder seed photos to the brand palette
+- [ ] **T6.7** Decide whether Login / Sign Up should show a dummy form (see ISSUE-10)
 
 ---
 

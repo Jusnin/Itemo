@@ -10,7 +10,7 @@ export default async function FindPage() {
   // with no request per keystroke. Revisit if this ever holds thousands of items.
   return (
     <>
-      <Header title="Find Item" />
+      <Header title="Find Item" back="/home" />
       <FindClient items={allStock(db)} />
     </>
   );

@@ -4,7 +4,7 @@ import { AddClient } from "./AddClient";
 export default function AddPage() {
   return (
     <>
-      <Header title="Add Item" />
+      <Header title="Add Item" back="/home" />
       <AddClient />
     </>
   );

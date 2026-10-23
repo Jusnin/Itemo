@@ -88,3 +88,39 @@ current `zodOutputFormat` requires Zod 4's internals.
 Now on `@anthropic-ai/sdk@^0.137.0` and `zod@^4.6.7`. Worth re-checking before
 handover — a stale pin fails at build time on the recipient's machine, which is
 the worst place to find out.
+
+---
+
+### ISSUE-10 — Login and Sign Up do nothing · **OPEN** · T6.7
+
+`docs/ItemO!-2.pdf` shows a welcome screen with Login and Sign Up. There is no
+account system in the demo, so both buttons navigate straight to Home and a small
+"Demo mode — no account needed" line sits underneath.
+
+That is the fastest path on stage, but if the pitch needs to *show* an onboarding
+flow, the alternative is a dummy form — two fields, no validation, any input
+continues. Half a day. Your call which story the business plan is telling.
+
+---
+
+### ISSUE-11 — Welcome screen is unskippable on every visit · **ACCEPTED** · T6.3
+
+`/` always shows the welcome screen, so reopening the app means one extra tap.
+Deliberate: the welcome screen *is* the startup page the spec asks for, and a
+demo benefits from always opening on the branded screen.
+
+Note the manifest's `start_url` is `/home`, so an Add-to-Home-Screen install opens
+straight into the app and skips it.
+
+---
+
+### ISSUE-12 — New spec drops the "avoid unnecessary features" guardrail · **NOTED**
+
+The original `app itemo.pdf` §4 explicitly ruled out social sharing, complex
+analytics, AI shopping recommendations and advanced dashboards. `ITEMO!.pdf` does
+not carry that paragraph forward.
+
+Nothing to build — but the demo scope still follows the old guardrail, because it
+is what keeps this shippable in a week. If the omission was deliberate and one of
+those features is now wanted, it needs to be scoped as new work rather than
+assumed in.

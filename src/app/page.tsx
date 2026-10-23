@@ -1,90 +1,46 @@
 import Link from "next/link";
-import { Camera, Search, Boxes, ChevronRight } from "lucide-react";
-import { allStock, readDb } from "@/lib/db";
-import { expiryStatus } from "@/lib/format";
-import { Photo } from "@/components/Photo";
-import { ExpiryBadge } from "@/components/ExpiryBadge";
 
-export const dynamic = "force-dynamic";
-
-const ACTIONS = [
-  { href: "/add", icon: Camera, title: "Add Item", blurb: "Photograph what you bought" },
-  { href: "/find", icon: Search, title: "Find Item", blurb: "Search your saved photos" },
-  { href: "/stock", icon: Boxes, title: "My Stock", blurb: "Check what's left" },
-] as const;
-
-export default async function HomePage() {
-  const db = await readDb();
-  const items = allStock(db);
-
-  const totalUnits = items.reduce((sum, i) => sum + i.stock, 0);
-  const recent = [...items]
-    .filter((i) => i.lastPurchase)
-    .sort((a, b) => (b.lastPurchase ?? "").localeCompare(a.lastPurchase ?? ""))
-    .slice(0, 8);
-
+export default function WelcomePage() {
   return (
-    <main className="px-5 pb-12 pt-10">
-      <p className="text-sm font-medium text-accent">ITEMO</p>
-      <h1 className="mt-1 text-[1.75rem] font-semibold leading-tight tracking-tight">
-        Scan it. Find it.
-        <br />
-        Check your stock.
-      </h1>
-      <p className="mt-2 text-sm text-ink-soft">
-        {items.length} products · {totalUnits} items at home
-      </p>
+    <main className="flex min-h-dvh flex-col bg-surface">
+      <div className="relative flex flex-1 items-center justify-center px-6 pt-10">
+        <div className="relative w-full max-w-[20rem]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/folder.png" alt="" className="w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/logo-light.png"
+            alt="ITEMO!"
+            className="absolute left-[61%] top-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
+      </div>
 
-      <nav className="mt-7 space-y-3">
-        {ACTIONS.map(({ href, icon: Icon, title, blurb }) => (
+      <section className="welcome-panel bg-canvas px-8 pb-10 pt-12 text-center">
+        <h1 className="text-[2rem] font-extrabold uppercase tracking-tight text-ink">Welcome</h1>
+        <p className="mt-1.5 text-[0.8125rem] font-medium italic text-ink-faint">
+          Know what you own, buy only what you need
+        </p>
+
+        <div className="mx-auto mt-7 max-w-[17rem] space-y-3">
           <Link
-            key={href}
-            href={href}
-            className="tap flex items-center gap-4 rounded-card border border-line bg-surface p-4 active:bg-canvas"
+            href="/home"
+            className="tap block rounded-full bg-accent py-3.5 font-semibold text-white"
           >
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
-              <Icon size={22} strokeWidth={2} />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block font-semibold">{title}</span>
-              <span className="block text-sm text-ink-soft">{blurb}</span>
-            </span>
-            <ChevronRight size={18} className="shrink-0 text-ink-faint" />
+            Login
           </Link>
-        ))}
-      </nav>
+          <Link
+            href="/home"
+            className="tap block rounded-full border border-ink bg-surface py-3.5 font-semibold text-ink"
+          >
+            Sign Up
+          </Link>
+        </div>
 
-      {recent.length > 0 && (
-        <section className="mt-9">
-          <h2 className="text-sm font-semibold text-ink-soft">Recently added</h2>
-          <div className="-mx-5 mt-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <ul className="flex w-max snap-x gap-3 px-5 pb-2">
-              {recent.map((item) => {
-              const status = expiryStatus(item);
-              return (
-                <li key={item.id} className="w-28 shrink-0 snap-start">
-                  <Link href={`/item/${item.id}`} className="tap block">
-                    <Photo
-                      photoId={item.heroPhotoId}
-                      alt={item.name}
-                      className="h-28 w-28 rounded-xl border border-line"
-                      iconSize={26}
-                    />
-                    <p className="mt-2 truncate text-xs font-medium">{item.name}</p>
-                    <p className="text-xs text-ink-faint">{item.stock} left</p>
-                    {status && status.tone !== "ok" && (
-                      <div className="mt-1">
-                        <ExpiryBadge status={status} />
-                      </div>
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-            </ul>
-          </div>
-        </section>
-      )}
+        <p className="mt-6 text-xs text-ink-faint">
+          Demo mode — no account needed.
+        </p>
+      </section>
     </main>
   );
 }

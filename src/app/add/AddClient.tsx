@@ -135,7 +135,7 @@ export function AddClient() {
           className="sr-only"
         />
         <div className="rounded-card border border-dashed border-line bg-canvas px-6 py-12 text-center">
-          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-accent-soft text-accent">
+          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-soft text-brand-deep">
             <Camera size={28} strokeWidth={1.75} />
           </span>
           <h2 className="mt-4 font-semibold">Photograph the product</h2>
@@ -215,7 +215,7 @@ export function AddClient() {
                 onClick={() => setCategory(c)}
                 className={`tap rounded-full border px-3.5 py-1.5 text-sm font-medium ${
                   category === c
-                    ? "border-accent bg-accent text-white"
+                    ? "border-brand bg-brand text-white"
                     : "border-line bg-surface text-ink-soft"
                 }`}
               >
@@ -284,7 +284,7 @@ export function AddClient() {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-[16px] outline-none focus:border-accent";
+  "w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-[16px] outline-none focus:border-brand";
 
 function Field({
   label,
@@ -308,8 +308,8 @@ function Field({
 
 function Notice({ tone, children }: { tone: "accent" | "warn" | "danger"; children: React.ReactNode }) {
   const tones = {
-    accent: "bg-accent-soft text-accent",
-    warn: "bg-warn-soft text-warn",
+    accent: "bg-brand-soft text-brand-deep",
+    warn: "bg-pop-soft text-ink",
     danger: "bg-danger-soft text-danger",
   } as const;
   return (

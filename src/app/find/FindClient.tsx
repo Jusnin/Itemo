@@ -40,7 +40,7 @@ export function FindClient({ items }: { items: StockItem[] }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name or category"
             autoComplete="off"
-            className="w-full rounded-full border border-line bg-canvas py-2.5 pl-10 pr-10 text-[16px] outline-none placeholder:text-ink-faint focus:border-accent"
+            className="w-full rounded-full border border-line bg-canvas py-2.5 pl-10 pr-10 text-[16px] outline-none placeholder:text-ink-faint focus:border-brand"
           />
           {query && (
             <button
@@ -115,7 +115,7 @@ function Chip({ label, active, onClick }: { label: string; active: boolean; onCl
       type="button"
       onClick={onClick}
       className={`tap shrink-0 rounded-full border px-3.5 py-1.5 text-sm font-medium ${
-        active ? "border-accent bg-accent text-white" : "border-line bg-surface text-ink-soft"
+        active ? "border-brand bg-brand text-white" : "border-line bg-surface text-ink-soft"
       }`}
     >
       {label}

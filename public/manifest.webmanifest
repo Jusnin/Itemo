@@ -1,0 +1,13 @@
+{
+  "name": "ITEMO!",
+  "short_name": "ITEMO!",
+  "description": "Know what you own, buy only what you need.",
+  "start_url": "/home",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#9a7cc5",
+  "icons": [
+    { "src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

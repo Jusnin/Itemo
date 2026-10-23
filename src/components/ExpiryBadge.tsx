@@ -2,7 +2,7 @@ import type { ExpiryStatus } from "@/lib/format";
 
 const TONE = {
   expired: "bg-danger-soft text-danger",
-  soon: "bg-warn-soft text-warn",
+  soon: "bg-pop text-ink",
   ok: "bg-canvas text-ink-soft",
 } as const;
 

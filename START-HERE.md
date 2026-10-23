@@ -1,4 +1,4 @@
-# ITEMO — how to run the demo
+# ITEMO! — how to run the demo
 
 You need a laptop, a phone, and about five minutes the first time.
 

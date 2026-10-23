@@ -7,13 +7,15 @@ import path from "node:path";
 const ROOT = path.join(import.meta.dirname, "..");
 const SEED_PHOTOS = path.join(ROOT, "data", "seed-photos");
 
+// Tints drawn from the ITEMO! brand purple and yellow, so the placeholder
+// tiles read as one family until real photographs replace them (ISSUE-6).
 const PALETTE = {
-  "Personal Care": ["#E8F0FE", "#C6DAFC", "#1B4FA8"],
-  Cleaning: ["#E6F7F1", "#BDEBDC", "#0F6B4F"],
-  "Food & Drink": ["#FFF2E3", "#FFDCB8", "#9A4E09"],
-  Medicine: ["#FDE9EC", "#F9C8D1", "#A31B3C"],
-  Electronics: ["#EFEBFB", "#D6CCF5", "#4A2FA8"],
-  Other: ["#F1F2F4", "#DCDFE4", "#44474D"],
+  "Personal Care": ["#F3EDFA", "#D7C5EE", "#6B4E96"],
+  Cleaning: ["#EEEBFB", "#CFC8F1", "#53499A"],
+  "Food & Drink": ["#FFF8DF", "#FFE7A0", "#8A6D12"],
+  Medicine: ["#FBEBF5", "#EFC9E1", "#8C3F72"],
+  Electronics: ["#EAE4F8", "#C5B6E9", "#5B4590"],
+  Other: ["#F2F2F5", "#DEDEE3", "#4C4F56"],
 };
 
 /** name, brand, category, qtyPerBatch[], purchase offsets (days ago), expiry offsets (days from today, null = n/a) */

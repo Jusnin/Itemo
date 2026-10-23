@@ -6,13 +6,19 @@
   --color-ink-faint: #8b9097;
   --color-line: #e7e9ec;
   --color-surface: #ffffff;
-  --color-canvas: #f6f7f9;
+  --color-canvas: #f5f5f7;
 
-  --color-accent: #1f6f4f;
-  --color-accent-soft: #e8f3ee;
+  /* ITEMO! brand — docs/ITEMO!.pdf §2 */
+  --color-brand: #9a7cc5;
+  --color-brand-soft: #f1ebf9;
+  --color-brand-deep: #6b4e96;
+  --color-pop: #fdc904;
+  --color-pop-soft: #fff6d9;
 
-  --color-warn: #a86a08;
-  --color-warn-soft: #fdf2e0;
+  /* Primary actions are near-black, matching the logo and the welcome mockup;
+     purple at #9A7CC5 only reaches ~3.4:1 on white, too low for button text. */
+  --color-accent: #15171c;
+
   --color-danger: #b02a3a;
   --color-danger-soft: #fdecee;
 
@@ -32,8 +38,6 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* Phone-first: the app is a single column that never exceeds a phone's width,
-   so it looks deliberate when mirrored onto a laptop or projector. */
 .shell {
   max-width: 28rem;
   margin: 0 auto;
@@ -47,6 +51,11 @@ body {
 }
 .tap:active {
   transform: scale(0.975);
+}
+
+/* The welcome panel's wide elliptical lip, as drawn in docs/ItemO!-2.pdf */
+.welcome-panel {
+  border-radius: 50% 50% 0 0 / 14% 14% 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
