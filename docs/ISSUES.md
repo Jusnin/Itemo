@@ -124,3 +124,36 @@ Nothing to build — but the demo scope still follows the old guardrail, because
 is what keeps this shippable in a week. If the omission was deliberate and one of
 those features is now wanted, it needs to be scoped as new work rather than
 assumed in.
+
+---
+
+### ISSUE-13 — Static hosting forced the data layer into the browser · **RESOLVED** · 2026-10-23
+
+GitHub Pages serves static files only — it cannot run the Next.js API routes or
+write to `data/db.json`. Hosting the demo as a public website meant moving the
+whole store into the browser.
+
+Products, batches and photos now live in **IndexedDB**, seeded on first visit from
+`public/seed/`. What this bought:
+
+- A public URL anyone can open on a phone, served over HTTPS.
+- Installable to the home screen; the camera API is available in a secure context,
+  which plain LAN HTTP never allowed (supersedes ISSUE-3).
+- Every visitor gets a private copy of the demo, so a room full of people can try
+  it at once without touching each other's data.
+
+What it cost: data no longer lives on one laptop, so there is no single dataset to
+curate for a demo. `npm run reset` is replaced by a **Reset demo data** button on
+the home screen. ISSUE-2 (JSON file concurrency) no longer applies.
+
+---
+
+### ISSUE-14 — Automatic label reading is off on the public site · **OPEN**
+
+A static site has nowhere to hide an API key, so the deployed demo falls back to
+manual entry. This is the public-hosting form of ISSUE-1 and it needs the same
+decision: stand up a small endpoint holding the key (Cloudflare Worker or a Vercel
+function, roughly an hour), then set the repository variable `ANALYZE_URL`.
+
+Until then the scan saves the photo and opens the confirm form with empty fields.
+Everything else — Find, My Stock, purchase records — works fully.

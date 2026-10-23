@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # enablement: true turns Pages on automatically on the first run.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build static site
+        env:
+          # The site is served from https://<user>.github.io/Itemo/
+          NEXT_PUBLIC_BASE_PATH: /Itemo
+          # Optional: an endpoint holding an Anthropic key enables label reading.
+          # Without it the app falls back to manual entry (docs/ISSUES.md ISSUE-1).
+          NEXT_PUBLIC_ANALYZE_URL: ${{ vars.ANALYZE_URL }}
+        run: npm run build
+      - name: Disable Jekyll
+        run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

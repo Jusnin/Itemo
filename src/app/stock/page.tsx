@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Camera } from "lucide-react";
-import { allStock, readDb } from "@/lib/db";
+import { useStock } from "@/lib/useStock";
 import { expiryStatus } from "@/lib/format";
 import { CATEGORIES } from "@/lib/types";
 import { Header } from "@/components/Header";
@@ -8,16 +10,14 @@ import { Photo } from "@/components/Photo";
 import { ExpiryBadge } from "@/components/ExpiryBadge";
 import { QuantityStepper } from "@/components/QuantityStepper";
 import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
 
-export const dynamic = "force-dynamic";
-
-export default async function StockPage() {
-  const db = await readDb();
-  const items = allStock(db);
+export default function StockPage() {
+  const { items, reload } = useStock();
 
   const grouped = CATEGORIES.map((category) => ({
     category,
-    items: items
+    items: (items ?? [])
       .filter((i) => i.category === category)
       .sort((a, b) => a.name.localeCompare(b.name)),
   })).filter((g) => g.items.length > 0);
@@ -26,7 +26,9 @@ export default async function StockPage() {
     <>
       <Header title="My Stock" back="/home" />
       <main className="px-5 pb-16 pt-4">
-        {grouped.length === 0 ? (
+        {items === null ? (
+          <Skeleton rows={6} />
+        ) : grouped.length === 0 ? (
           <EmptyState
             icon={Camera}
             title="Nothing here yet"
@@ -44,7 +46,7 @@ export default async function StockPage() {
                   const status = expiryStatus(item);
                   return (
                     <li key={item.id} className="flex items-center gap-3 p-3">
-                      <Link href={`/item/${item.id}`} className="tap flex min-w-0 flex-1 items-center gap-3">
+                      <Link href={`/item?id=${item.id}`} className="tap flex min-w-0 flex-1 items-center gap-3">
                         <Photo
                           photoId={item.heroPhotoId}
                           alt={item.name}
@@ -64,7 +66,7 @@ export default async function StockPage() {
                           </span>
                         </span>
                       </Link>
-                      <QuantityStepper productId={item.id} stock={item.stock} />
+                      <QuantityStepper productId={item.id} stock={item.stock} onChange={reload} />
                     </li>
                   );
                 })}

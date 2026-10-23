@@ -1,6 +1,15 @@
 # ITEMO! — how to run the demo
 
-You need a laptop, a phone, and about five minutes the first time.
+**The quickest way to see ITEMO! is to open it on your phone:**
+
+> ## https://jusnin.github.io/Itemo/
+
+Nothing to install. Add it to your home screen and it behaves like an app, and the
+data stays private to your own phone.
+
+The rest of this page is for running it from your own laptop instead — useful with
+no internet, or to show it from a computer screen. You need a laptop, a phone, and
+about five minutes the first time.
 
 ---
 
@@ -60,8 +69,9 @@ fixes, in order:
 Make sure the laptop is connected to wifi, then close the window and start again.
 
 **I want to start fresh before showing someone.**
-Run `npm run reset` in the folder. This restores the original demo items and
-removes anything added during testing. Do this before each demo.
+Tap **Reset demo data** at the bottom of the home screen. This restores the
+original demo items and removes anything added during testing. Do this before
+each demo.
 
 ---
 

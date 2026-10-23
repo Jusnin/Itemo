@@ -8,9 +8,7 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "start": "next start -H 0.0.0.0",
     "demo": "node scripts/demo.mjs",
-    "reset": "node scripts/reset.mjs",
     "seed:photos": "node scripts/make-seed-photos.mjs",
     "share": "node scripts/share.mjs"
   },

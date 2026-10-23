@@ -1,17 +1,15 @@
-import { allStock, readDb } from "@/lib/db";
+"use client";
+
 import { Header } from "@/components/Header";
+import { useStock } from "@/lib/useStock";
 import { FindClient } from "./FindClient";
 
-export const dynamic = "force-dynamic";
-
-export default async function FindPage() {
-  const db = await readDb();
-  // The dataset is small enough to filter on the client — search feels instant,
-  // with no request per keystroke. Revisit if this ever holds thousands of items.
+export default function FindPage() {
+  const { items } = useStock();
   return (
     <>
       <Header title="Find Item" back="/home" />
-      <FindClient items={allStock(db)} />
+      <FindClient items={items ?? []} loading={items === null} />
     </>
   );
 }

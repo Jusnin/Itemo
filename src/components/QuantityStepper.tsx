@@ -1,25 +1,22 @@
 "use client";
 
-import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
+import { changeStock } from "@/lib/actions";
 
-/**
- * Optimistic by design: the number moves on tap and reconciles with the server
- * afterwards. On a demo this is the difference between "snappy" and "laggy".
- */
+/** Optimistic: the number moves on tap and reconciles with storage afterwards. */
 export function QuantityStepper({
   productId,
   stock,
   size = "md",
+  onChange,
 }: {
   productId: string;
   stock: number;
   size?: "md" | "lg";
+  onChange?: () => void;
 }) {
   const [value, setValue] = useState(stock);
-  const [, startTransition] = useTransition();
-  const router = useRouter();
 
   async function change(delta: number) {
     const next = Math.max(0, value + delta);
@@ -27,24 +24,15 @@ export function QuantityStepper({
     setValue(next);
 
     try {
-      const res = await fetch("/api/stock", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, delta }),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      const { item } = await res.json();
-      setValue(item.stock);
-      startTransition(() => router.refresh());
+      const item = await changeStock(productId, delta);
+      if (item) setValue(item.stock);
+      onChange?.();
     } catch {
       setValue(value); // roll back; never leave a wrong number on screen
     }
   }
 
-  const btn =
-    size === "lg"
-      ? "h-11 w-11 text-ink"
-      : "h-9 w-9 text-ink-soft";
+  const btn = size === "lg" ? "h-11 w-11 text-ink" : "h-9 w-9 text-ink-soft";
 
   return (
     <div className="flex items-center gap-1">

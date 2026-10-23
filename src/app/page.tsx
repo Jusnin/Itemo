@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 export default function WelcomePage() {
   return (
@@ -6,10 +7,10 @@ export default function WelcomePage() {
       <div className="relative flex flex-1 items-center justify-center px-6 pt-10">
         <div className="relative w-full max-w-[20rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/folder.png" alt="" className="w-full" />
+          <img src={asset("/brand/folder.png")} alt="" className="w-full" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/logo-light.png"
+            src={asset("/brand/logo-light.png")}
             alt="ITEMO!"
             className="absolute left-[61%] top-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2"
           />

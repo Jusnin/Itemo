@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import { asset } from "@/lib/asset";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ITEMO!",
   description: "Know what you own, buy only what you need.",
-  manifest: "/manifest.webmanifest",
+  manifest: asset("/manifest.webmanifest"),
   icons: {
-    icon: "/brand/icon-512.png",
-    apple: "/brand/apple-touch-icon.png",
+    icon: asset("/brand/icon-512.png"),
+    apple: asset("/brand/apple-touch-icon.png"),
   },
   appleWebApp: { capable: true, statusBarStyle: "default", title: "ITEMO!" },
 };

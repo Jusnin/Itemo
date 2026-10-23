@@ -5,7 +5,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.join(import.meta.dirname, "..");
-const SEED_PHOTOS = path.join(ROOT, "data", "seed-photos");
+const SEED_PHOTOS = path.join(ROOT, "public", "seed", "photos");
 
 // Tints drawn from the ITEMO! brand purple and yellow, so the placeholder
 // tiles read as one family until real photographs replace them (ISSUE-6).
@@ -97,7 +97,7 @@ for (const [name, brand, category, purchases] of ITEMS) {
 }
 
 await fs.writeFile(
-  path.join(ROOT, "data", "seed.json"),
+  path.join(ROOT, "public", "seed", "seed.json"),
   JSON.stringify({ products, batches }, null, 2),
   "utf8",
 );

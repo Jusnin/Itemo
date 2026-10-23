@@ -4,18 +4,14 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Camera, Image as ImageIcon, Loader2, Sparkles, TriangleAlert } from "lucide-react";
 import { downscale } from "@/lib/downscale";
+import { savePhoto } from "@/lib/store";
+import { addItem } from "@/lib/actions";
+import { analyze, autoDetectEnabled } from "@/lib/analyze";
+import type { Detected } from "@/lib/analyze";
 import { CATEGORIES } from "@/lib/types";
 import type { Category } from "@/lib/types";
 
-interface Detected {
-  product_name: string;
-  brand: string | null;
-  category: Category;
-  expiry_date: string | null;
-  confidence: "high" | "medium" | "low";
-}
-
-type Source = "claude" | "proxy" | "demo" | "manual";
+type Source = "remote" | "manual";
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -50,44 +46,24 @@ export function AddClient() {
       return;
     }
 
-    // Show the form straight away — the fields fill in underneath (plan §2).
+    // Show the form straight away — the fields fill in underneath.
     setPreview(image.previewUrl);
-    setReading(true);
+    setReading(autoDetectEnabled);
     setSource(null);
 
-    // Saving the photo and reading the label are independent; run them together.
-    const saved = fetch("/api/photo", {
-      method: "POST",
-      body: (() => {
-        const form = new FormData();
-        form.append("photo", new File([image.blob], "photo.jpg", { type: "image/jpeg" }));
-        return form;
-      })(),
-    })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => setPhotoId(data?.photoId ?? null))
-      .catch(() => setPhotoId(null));
+    // Storing the photo and reading the label are independent; run them together.
+    const stored = savePhoto(image.blob).then(setPhotoId).catch(() => setPhotoId(null));
 
-    try {
-      const res = await fetch("/api/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ imageBase64: image.base64 }),
-      });
-      const data = (await res.json()) as { item?: Detected; source?: Source };
-      if (data.item) {
-        if (data.item.product_name) setName(data.item.product_name);
-        if (data.item.brand) setBrand(data.item.brand);
-        if (data.item.category) setCategory(data.item.category);
-        if (data.item.expiry_date) setExpiryDate(data.item.expiry_date);
-      }
-      setSource(data.source ?? "manual");
-    } catch {
-      setSource("manual");
-    } finally {
-      setReading(false);
-      await saved;
+    const { item, source } = await analyze(image.base64);
+    if (item) {
+      if (item.product_name) setName(item.product_name);
+      if (item.brand) setBrand(item.brand);
+      if (item.category) setCategory(item.category);
+      if (item.expiry_date) setExpiryDate(item.expiry_date);
     }
+    setSource(source);
+    setReading(false);
+    await stored;
   }
 
   async function save(event: React.FormEvent) {
@@ -100,26 +76,19 @@ export function AddClient() {
     setError(null);
 
     try {
-      const res = await fetch("/api/items", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          brand: brand || null,
-          category,
-          quantity,
-          purchaseDate,
-          expiryDate: expiryDate || null,
-          photoId,
-        }),
+      const { item } = await addItem({
+        name,
+        brand: brand || null,
+        category,
+        quantity,
+        purchaseDate,
+        expiryDate: expiryDate || null,
+        photoId,
       });
-      if (!res.ok) throw new Error(String(res.status));
-      const { item } = await res.json();
-      router.push(`/item/${item.id}`);
-      router.refresh();
+      router.push(`/item?id=${item.id}`);
     } catch {
       setSaving(false);
-      setError("Could not save. Check the app is still running and try again.");
+      setError("Could not save on this device. Check your browser allows storage.");
     }
   }
 
@@ -180,14 +149,14 @@ export function AddClient() {
           <Loader2 size={15} className="animate-spin" /> Reading the label…
         </Notice>
       )}
-      {!reading && source === "claude" && (
+      {!reading && source === "remote" && (
         <Notice tone="accent">
           <Sparkles size={15} /> Detected automatically — check it is right.
         </Notice>
       )}
-      {!reading && (source === "manual" || source === "demo") && (
+      {!reading && source === "manual" && (
         <Notice tone="warn">
-          <TriangleAlert size={15} /> Automatic detection is off. Enter the details yourself.
+          <TriangleAlert size={15} /> Enter the details yourself — automatic detection is off.
         </Notice>
       )}
 

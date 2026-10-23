@@ -6,6 +6,6 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 
-# Live demo data — seeded from data/seed.json via `npm run reset`
-data/db.json
-data/photos/
+# Legacy local store from the pre-static version. The app now keeps everything
+# in the browser; these files are no longer read, just not deleted for you.
+data/

@@ -6,7 +6,7 @@
       "brand": "Dettol",
       "category": "Personal Care",
       "heroPhotoId": "ph_seed01",
-      "createdAt": "2026-08-16T12:09:56.622Z"
+      "createdAt": "2026-08-16T12:32:22.250Z"
     },
     {
       "id": "p_seed02",
@@ -14,7 +14,7 @@
       "brand": "Head & Shoulders",
       "category": "Personal Care",
       "heroPhotoId": "ph_seed02",
-      "createdAt": "2026-09-22T12:09:56.627Z"
+      "createdAt": "2026-09-22T12:32:22.252Z"
     },
     {
       "id": "p_seed03",
@@ -22,7 +22,7 @@
       "brand": "Colgate",
       "category": "Personal Care",
       "heroPhotoId": "ph_seed03",
-      "createdAt": "2026-10-11T12:09:56.627Z"
+      "createdAt": "2026-10-11T12:32:22.252Z"
     },
     {
       "id": "p_seed04",
@@ -30,7 +30,7 @@
       "brand": "Nivea",
       "category": "Personal Care",
       "heroPhotoId": "ph_seed04",
-      "createdAt": "2026-07-19T12:09:56.628Z"
+      "createdAt": "2026-07-19T12:32:22.252Z"
     },
     {
       "id": "p_seed05",
@@ -38,7 +38,7 @@
       "brand": "Sunlight",
       "category": "Cleaning",
       "heroPhotoId": "ph_seed05",
-      "createdAt": "2026-09-30T12:09:56.628Z"
+      "createdAt": "2026-09-30T12:32:22.253Z"
     },
     {
       "id": "p_seed06",
@@ -46,7 +46,7 @@
       "brand": "Breeze",
       "category": "Cleaning",
       "heroPhotoId": "ph_seed06",
-      "createdAt": "2026-09-06T12:09:56.628Z"
+      "createdAt": "2026-09-06T12:32:22.253Z"
     },
     {
       "id": "p_seed07",
@@ -54,7 +54,7 @@
       "brand": "Mr Muscle",
       "category": "Cleaning",
       "heroPhotoId": "ph_seed07",
-      "createdAt": "2026-10-17T12:09:56.629Z"
+      "createdAt": "2026-10-17T12:32:22.253Z"
     },
     {
       "id": "p_seed08",
@@ -62,7 +62,7 @@
       "brand": "Glad",
       "category": "Cleaning",
       "heroPhotoId": "ph_seed08",
-      "createdAt": "2026-10-08T12:09:56.629Z"
+      "createdAt": "2026-10-08T12:32:22.253Z"
     },
     {
       "id": "p_seed09",
@@ -70,7 +70,7 @@
       "brand": "Bertolli",
       "category": "Food & Drink",
       "heroPhotoId": "ph_seed09",
-      "createdAt": "2026-09-13T12:09:56.630Z"
+      "createdAt": "2026-09-13T12:32:22.254Z"
     },
     {
       "id": "p_seed10",
@@ -78,7 +78,7 @@
       "brand": "Nescafé",
       "category": "Food & Drink",
       "heroPhotoId": "ph_seed10",
-      "createdAt": "2026-10-12T12:09:56.630Z"
+      "createdAt": "2026-10-12T12:32:22.254Z"
     },
     {
       "id": "p_seed11",
@@ -86,7 +86,7 @@
       "brand": "Jasmine",
       "category": "Food & Drink",
       "heroPhotoId": "ph_seed11",
-      "createdAt": "2026-08-30T12:09:56.630Z"
+      "createdAt": "2026-08-30T12:32:22.254Z"
     },
     {
       "id": "p_seed12",
@@ -94,7 +94,7 @@
       "brand": "Farmhouse",
       "category": "Food & Drink",
       "heroPhotoId": "ph_seed12",
-      "createdAt": "2026-10-20T12:09:56.631Z"
+      "createdAt": "2026-10-20T12:32:22.255Z"
     },
     {
       "id": "p_seed13",
@@ -102,7 +102,7 @@
       "brand": "Panadol",
       "category": "Medicine",
       "heroPhotoId": "ph_seed13",
-      "createdAt": "2026-06-25T12:09:56.631Z"
+      "createdAt": "2026-06-25T12:32:22.255Z"
     },
     {
       "id": "p_seed14",
@@ -110,7 +110,7 @@
       "brand": "Hansaplast",
       "category": "Medicine",
       "heroPhotoId": "ph_seed14",
-      "createdAt": "2026-04-06T12:09:56.631Z"
+      "createdAt": "2026-04-06T12:32:22.256Z"
     },
     {
       "id": "p_seed15",
@@ -118,7 +118,7 @@
       "brand": "Energizer",
       "category": "Electronics",
       "heroPhotoId": "ph_seed15",
-      "createdAt": "2026-08-04T12:09:56.632Z"
+      "createdAt": "2026-08-04T12:32:22.257Z"
     },
     {
       "id": "p_seed16",
@@ -126,7 +126,7 @@
       "brand": "Anker",
       "category": "Electronics",
       "heroPhotoId": "ph_seed16",
-      "createdAt": "2026-05-26T12:09:56.632Z"
+      "createdAt": "2026-05-26T12:32:22.257Z"
     }
   ],
   "batches": [
@@ -137,7 +137,7 @@
       "purchaseDate": "2026-08-16",
       "expiryDate": "2027-12-17",
       "photoId": "ph_seed01",
-      "createdAt": "2026-08-16T12:09:56.626Z"
+      "createdAt": "2026-08-16T12:32:22.251Z"
     },
     {
       "id": "b_seed01_2",
@@ -146,7 +146,7 @@
       "purchaseDate": "2026-10-14",
       "expiryDate": "2028-06-24",
       "photoId": "ph_seed01",
-      "createdAt": "2026-10-14T12:09:56.626Z"
+      "createdAt": "2026-10-14T12:32:22.251Z"
     },
     {
       "id": "b_seed02_1",
@@ -155,7 +155,7 @@
       "purchaseDate": "2026-09-22",
       "expiryDate": "2028-04-15",
       "photoId": "ph_seed02",
-      "createdAt": "2026-09-22T12:09:56.627Z"
+      "createdAt": "2026-09-22T12:32:22.252Z"
     },
     {
       "id": "b_seed03_1",
@@ -164,7 +164,7 @@
       "purchaseDate": "2026-10-11",
       "expiryDate": "2028-10-22",
       "photoId": "ph_seed03",
-      "createdAt": "2026-10-11T12:09:56.627Z"
+      "createdAt": "2026-10-11T12:32:22.252Z"
     },
     {
       "id": "b_seed04_1",
@@ -173,7 +173,7 @@
       "purchaseDate": "2026-07-19",
       "expiryDate": "2027-08-19",
       "photoId": "ph_seed04",
-      "createdAt": "2026-07-19T12:09:56.628Z"
+      "createdAt": "2026-07-19T12:32:22.252Z"
     },
     {
       "id": "b_seed05_1",
@@ -182,7 +182,7 @@
       "purchaseDate": "2026-09-30",
       "expiryDate": null,
       "photoId": "ph_seed05",
-      "createdAt": "2026-09-30T12:09:56.628Z"
+      "createdAt": "2026-09-30T12:32:22.253Z"
     },
     {
       "id": "b_seed06_1",
@@ -191,7 +191,7 @@
       "purchaseDate": "2026-09-06",
       "expiryDate": null,
       "photoId": "ph_seed06",
-      "createdAt": "2026-09-06T12:09:56.628Z"
+      "createdAt": "2026-09-06T12:32:22.253Z"
     },
     {
       "id": "b_seed07_1",
@@ -200,7 +200,7 @@
       "purchaseDate": "2026-10-17",
       "expiryDate": null,
       "photoId": "ph_seed07",
-      "createdAt": "2026-10-17T12:09:56.629Z"
+      "createdAt": "2026-10-17T12:32:22.253Z"
     },
     {
       "id": "b_seed08_1",
@@ -209,7 +209,7 @@
       "purchaseDate": "2026-10-08",
       "expiryDate": null,
       "photoId": "ph_seed08",
-      "createdAt": "2026-10-08T12:09:56.629Z"
+      "createdAt": "2026-10-08T12:32:22.253Z"
     },
     {
       "id": "b_seed09_1",
@@ -218,7 +218,7 @@
       "purchaseDate": "2026-09-13",
       "expiryDate": "2027-11-17",
       "photoId": "ph_seed09",
-      "createdAt": "2026-09-13T12:09:56.630Z"
+      "createdAt": "2026-09-13T12:32:22.254Z"
     },
     {
       "id": "b_seed10_1",
@@ -227,7 +227,7 @@
       "purchaseDate": "2026-10-12",
       "expiryDate": "2028-02-15",
       "photoId": "ph_seed10",
-      "createdAt": "2026-10-12T12:09:56.630Z"
+      "createdAt": "2026-10-12T12:32:22.254Z"
     },
     {
       "id": "b_seed11_1",
@@ -236,7 +236,7 @@
       "purchaseDate": "2026-08-30",
       "expiryDate": "2027-05-21",
       "photoId": "ph_seed11",
-      "createdAt": "2026-08-30T12:09:56.630Z"
+      "createdAt": "2026-08-30T12:32:22.254Z"
     },
     {
       "id": "b_seed12_1",
@@ -245,7 +245,7 @@
       "purchaseDate": "2026-10-20",
       "expiryDate": "2026-10-27",
       "photoId": "ph_seed12",
-      "createdAt": "2026-10-20T12:09:56.631Z"
+      "createdAt": "2026-10-20T12:32:22.255Z"
     },
     {
       "id": "b_seed13_1",
@@ -254,7 +254,7 @@
       "purchaseDate": "2026-06-25",
       "expiryDate": "2026-10-11",
       "photoId": "ph_seed13",
-      "createdAt": "2026-06-25T12:09:56.631Z"
+      "createdAt": "2026-06-25T12:32:22.255Z"
     },
     {
       "id": "b_seed14_1",
@@ -263,7 +263,7 @@
       "purchaseDate": "2026-04-06",
       "expiryDate": "2029-04-10",
       "photoId": "ph_seed14",
-      "createdAt": "2026-04-06T12:09:56.631Z"
+      "createdAt": "2026-04-06T12:32:22.256Z"
     },
     {
       "id": "b_seed15_1",
@@ -272,7 +272,7 @@
       "purchaseDate": "2026-08-04",
       "expiryDate": null,
       "photoId": "ph_seed15",
-      "createdAt": "2026-08-04T12:09:56.632Z"
+      "createdAt": "2026-08-04T12:32:22.257Z"
     },
     {
       "id": "b_seed16_1",
@@ -281,7 +281,7 @@
       "purchaseDate": "2026-05-26",
       "expiryDate": null,
       "photoId": "ph_seed16",
-      "createdAt": "2026-05-26T12:09:56.632Z"
+      "createdAt": "2026-05-26T12:32:22.257Z"
     }
   ]
 }

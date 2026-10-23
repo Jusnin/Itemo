@@ -10,7 +10,7 @@ import { Photo } from "@/components/Photo";
 import { ExpiryBadge } from "@/components/ExpiryBadge";
 import { EmptyState } from "@/components/EmptyState";
 
-export function FindClient({ items }: { items: StockItem[] }) {
+export function FindClient({ items, loading }: { items: StockItem[]; loading: boolean }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string | null>(null);
 
@@ -65,7 +65,9 @@ export function FindClient({ items }: { items: StockItem[] }) {
       </div>
 
       <div className="px-5 pt-2">
-        {results.length === 0 ? (
+        {loading ? (
+          <p className="pt-6 text-center text-sm text-ink-faint">Loading…</p>
+        ) : results.length === 0 ? (
           <EmptyState
             icon={SearchX}
             title="No matches"
@@ -85,7 +87,7 @@ export function FindClient({ items }: { items: StockItem[] }) {
                 const status = expiryStatus(item);
                 return (
                   <li key={item.id}>
-                    <Link href={`/item/${item.id}`} className="tap block">
+                    <Link href={`/item?id=${item.id}`} className="tap block">
                       <Photo
                         photoId={item.heroPhotoId}
                         alt={item.name}

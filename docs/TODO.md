@@ -82,6 +82,22 @@ requirements are unchanged from the original spec; this is identity work.
 
 ---
 
+## Day 7 — Public hosting on GitHub Pages
+
+- [x] **T7.1** Move products, batches and photos into IndexedDB (`src/lib/store.ts`)
+- [x] **T7.2** Delete API routes; all screens become client components
+- [x] **T7.3** `/item/[id]` → `/item?id=` (static export cannot prerender user ids)
+- [x] **T7.4** `output: "export"` + basePath for the `/Itemo` subpath
+- [x] **T7.5** GitHub Actions workflow publishing to Pages
+- [x] **T7.6** In-app "Reset demo data", replacing `npm run reset`
+- [x] **T7.7** Relative manifest URLs so an installed PWA works on the subpath
+- [x] **T7.8** README for the public repo
+- [ ] **T7.9** Stand up the label-reading endpoint and set `ANALYZE_URL` (ISSUE-14)
+
+**Done when:** the site loads on a phone from its public URL and keeps its data.
+
+---
+
 ## Cut from demo scope
 
 - [-] Accounts, multi-user, cross-device sync
@@ -90,4 +106,4 @@ requirements are unchanged from the original spec; this is identity work.
 - [-] Image-similarity search (see plan §1, ambiguity 4)
 - [-] Units of measure (bottles vs. ml)
 - [-] Dark mode
-- [-] Offline service worker (blocked over LAN HTTP — see ISSUE-3)
+- [-] Offline service worker (now possible over HTTPS — not built)
