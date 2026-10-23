@@ -58,7 +58,35 @@ body {
   border-radius: 50% 50% 0 0 / 14% 14% 0 0;
 }
 
+/* Welcome -> Home transition: the artwork lifts away, the panel drops, and the
+   next screen rises in. Short enough not to slow a demo down. */
+@keyframes itemo-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes itemo-lift {
+  to { opacity: 0; transform: translateY(-28px) scale(1.05); }
+}
+@keyframes itemo-sink {
+  to { opacity: 0; transform: translateY(44px); }
+}
+
+.enter {
+  animation: itemo-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.leaving-art {
+  animation: itemo-lift 460ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.leaving-panel {
+  animation: itemo-sink 380ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tap { transition: none; }
   .tap:active { transform: none; }
+  .enter,
+  .leaving-art,
+  .leaving-panel {
+    animation: none;
+  }
 }

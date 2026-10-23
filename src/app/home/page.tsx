@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { asset } from "@/lib/asset";
-import { Camera, Search, Boxes, ChevronRight } from "lucide-react";
+import { Camera, Search, Boxes, ChevronRight, LogOut } from "lucide-react";
 import { useStock } from "@/lib/useStock";
 import { expiryStatus } from "@/lib/format";
 import { Photo } from "@/components/Photo";
@@ -25,9 +25,17 @@ export default function HomePage() {
     .slice(0, 8);
 
   return (
-    <main className="px-5 pb-12 pt-10">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={asset("/brand/logo.png")} alt="ITEMO!" className="h-9 w-auto" />
+    <main className="enter px-5 pb-12 pt-10">
+      <div className="flex items-start justify-between gap-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={asset("/brand/logo.png")} alt="ITEMO!" className="h-9 w-auto" />
+        <Link
+          href="/"
+          className="tap -mr-1 flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs font-medium text-ink-faint active:bg-canvas"
+        >
+          <LogOut size={14} /> Log out
+        </Link>
+      </div>
       <h1 className="mt-5 text-[1.75rem] font-semibold leading-tight tracking-tight">
         Scan it. Find it.
         <br />
